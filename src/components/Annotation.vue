@@ -1,5 +1,13 @@
-<script>
-
+<script lang="js">
+export default {
+  name: "Annotation",
+  created() {},
+  data() {
+    return {};
+  },
+  props: {},
+  methods: {},
+};
 </script>
 
 <template>
