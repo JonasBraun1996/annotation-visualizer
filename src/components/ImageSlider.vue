@@ -66,14 +66,14 @@ export default {
 }
 
 img {
-  height:600px;
+  height:100%;
   width:100%
 }
 
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 50%;
   width: auto;
   padding: 16px;
   color: white;
