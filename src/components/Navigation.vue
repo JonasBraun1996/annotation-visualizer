@@ -22,6 +22,7 @@ export default {
           <logo class="d-none d-lg-block"></logo>
           <RouterLink class="nav-link" to="/">Home</RouterLink>
           <RouterLink class="nav-link" to="/annotation">Annotation</RouterLink>
+          <RouterLink class="nav-link" to="/image_slider">Image Slider</RouterLink>
         </div>
       </div>
     </div>
