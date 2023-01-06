@@ -1,7 +1,6 @@
 <script>
 export default {
   name: "Imageslider",
-  created() {},
   data() {
     return {
       images: [
@@ -16,7 +15,6 @@ export default {
       currentIndex: 0
     };
   },
-  props: {},
   methods: {
     next() {
       this.currentIndex += 1;
@@ -95,4 +93,5 @@ img {
 
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.9);
-}</style>
+}
+</style>
