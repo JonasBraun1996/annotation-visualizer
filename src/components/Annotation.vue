@@ -1,12 +1,20 @@
 <script lang="js">
+
+import apiResultJson from './../apiResults/annotations.json'
+import {mapState} from 'vuex'
+
 export default {
   name: "Annotation",
-  created() {},
   data() {
-    return {};
+    return {
+      apiResult: apiResultJson
+    }
   },
-  props: {},
-  methods: {},
+  computed: {
+    ...mapState({
+      apiResult: (state) => state.apiResult
+    })
+  }
 };
 </script>
 

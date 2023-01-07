@@ -1,6 +1,11 @@
 <script>
+import { mapState, mapMutations } from "vuex";
+import Annotation from "./Annotation.vue";
 export default {
   name: "Imageslider",
+  components: {
+    Annotation,
+  },
   data() {
     return {
       images: [
@@ -9,40 +14,45 @@ export default {
         "008_RgbMaster_69438.jpg",
         "011_RgbMaster_69444.jpg",
         "014_RgbMaster_69450.jpg",
-        "017_RgbMaster_69456.jpg"
+        "017_RgbMaster_69456.jpg",
       ],
-      imageFolderPath: "./src/assets/images/",
-      currentIndex: 0
+      currentIndex: 0,
     };
   },
   methods: {
+    ...mapMutations(["setCurrentImage"]),
     next() {
       this.currentIndex += 1;
     },
     prev() {
-      if(this.currentIndex > 0) {
+      if (this.currentIndex > 0) {
         this.currentIndex -= 1;
       }
-    }
+    },
   },
   computed: {
-    currentSlide: function() {
-      return this.images[this.currentIndex % this.images.length];
-    }
-  }
+    ...mapState({
+      currentImage: (state) => state.currentImage,
+      imageFolderPath: (state) => state.imageFolderPath,
+    }),
+    currentSlide: function () {
+      let currentImage = this.images[this.currentIndex % this.images.length];
+      this.setCurrentImage(currentImage);
+      return this.imageFolderPath + currentImage;
+    },
+  },
 };
 </script>
 
 <template>
-  <transition-group name="fade" tag="div">
-      <div v-for="i in [currentIndex]" :key="i">
-        <img :src="imageFolderPath + currentSlide" />
-      </div>
-      
-    </transition-group>
-    
-    <a class="prev" @click="prev" href="#">&#10094; Previous</a>
-    <a class="next" @click="next" href="#">Next &#10095;</a>
+  <div v-for="i in [currentIndex]" :key="i">
+    <img :src="currentSlide" />
+    {{ currentImage }}
+  </div>
+  <annotation></annotation>
+
+  <a class="prev" @click="prev" href="#">&#10094; Previous</a>
+  <a class="next" @click="next" href="#">Next &#10095;</a>
 </template>
 
 <style scoped>
@@ -52,26 +62,27 @@ export default {
   overflow: hidden;
   visibility: visible;
   position: absolute;
-  width:100%;
+  width: 100%;
   opacity: 1;
 }
 
 .fade-enter,
 .fade-leave-to {
   visibility: hidden;
-  width:100%;
+  width: 100%;
   opacity: 0;
 }
 
 img {
-  height:100%;
-  width:100%
+  height: 100%;
+  width: 100%;
 }
 
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 40%;
   width: auto;
   padding: 16px;
   color: white;
@@ -91,7 +102,8 @@ img {
   left: 0;
 }
 
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.9);
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.9);
 }
 </style>
