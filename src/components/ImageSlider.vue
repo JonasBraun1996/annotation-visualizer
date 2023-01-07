@@ -47,7 +47,6 @@ export default {
 <template>
   <div v-for="i in [currentIndex]" :key="i">
     <img :src="currentSlide" />
-    {{ currentImage }}
   </div>
   <annotation></annotation>
 
