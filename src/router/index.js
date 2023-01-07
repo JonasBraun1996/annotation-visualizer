@@ -12,11 +12,6 @@ const router = createRouter({
       component: Home
     },
     {
-      path: '/annotation',
-      name: 'annotation',
-      component: Annotation
-    },
-    {
       path: '/image_slider',
       name: 'image_slider',
       component: ImageSlider
