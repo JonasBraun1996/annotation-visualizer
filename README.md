@@ -1,7 +1,7 @@
 # annotation-visualizer
 
 This is a prototype about extracting data from a static json file or an api for mapping the result boxes to an image.
-The usecase is about visalizing the tracking of boxes which were recognized by the api.
+The usecase is about visalizing the tracking of cars, buses or pedestrians which were recognized by the api.
 Those boxes are showing relevant obstacles for the sensoric of automated driving.
 
 ## Project Setup
