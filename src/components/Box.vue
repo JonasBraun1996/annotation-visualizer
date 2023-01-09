@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <canvas
-      id="myCanvas"
-      :width="width"
-      :height="height"
-      style="border: 1px solid #000000"
-    ></canvas>
-  </div>
+  <canvas
+    id="myCanvas"
+    :width="width"
+    :height="height"
+    style="border: 1px solid #000000"
+  ></canvas>
 </template>
 
 <script>

@@ -55,10 +55,23 @@ export default {
 };
 </script>
 
-<template v-if="currentAnnotations !== []">
-  <div v-for="(annotation, indexCounter) in currentAnnotations" v-bind:key="indexCounter">
-    <box :width="annotation.width" :height="annotation.height"></box>
+<template>
+  <div v-if="currentAnnotations !== []" class="horizontal-scrollable">
+    <div
+      v-for="(annotation, indexCounter) in currentAnnotations"
+      v-bind:key="indexCounter"
+    >
+      <box :width="annotation.width" :height="annotation.height"></box>
+    </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.horizontal-scrollable {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+</style>

@@ -87,7 +87,7 @@ img {
 .next {
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 20%;
   width: auto;
   padding: 16px;
   color: white;
