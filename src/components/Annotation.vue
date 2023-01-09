@@ -1,9 +1,19 @@
 <script lang="js">
 
 import {mapState, mapMutations} from 'vuex'
+import Box from './Box.vue'
 
 export default {
   name: "Annotation",
+  components: {
+    Box
+  },
+  data() {
+    return {
+      annotation: {},
+      indexCounter: 0
+    }
+  },
   methods: {
     ...mapMutations(['setCurrentAnnotations']),
     getAnnotationsForImage(currentImage, apiResult) {
@@ -45,10 +55,10 @@ export default {
 };
 </script>
 
-<template>
-  {{ currentAnnotations[0] }}<br />
-  {{ currentAnnotations[1] }}<br />
-  {{ currentAnnotations[2] }}
+<template v-if="currentAnnotations !== []">
+  <div v-for="(annotation, indexCounter) in currentAnnotations" v-bind:key="indexCounter">
+    <box :width="annotation.width" :height="annotation.height"></box>
+  </div>
 </template>
 
 <style scoped></style>

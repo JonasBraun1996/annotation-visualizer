@@ -22,6 +22,9 @@ export default {
       currentIndex: 0,
     };
   },
+  mounted() {
+    this.next();
+  },
   methods: {
     ...mapMutations(["setCurrentImage"]),
     next() {
@@ -50,11 +53,9 @@ export default {
 <template>
   <div v-for="i in [currentIndex]" :key="i">
     <img :src="currentSlide" />
-
-    <box :top="30" :left="20" :width="200" :height="300"></box>
   </div>
-  <annotation></annotation>
 
+  <annotation></annotation>
   <a class="prev" @click="prev" href="#">&#10094; Previous</a>
   <a class="next" @click="next" href="#">Next &#10095;</a>
 </template>
