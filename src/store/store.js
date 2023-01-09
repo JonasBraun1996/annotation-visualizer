@@ -9,7 +9,6 @@ export const store = createStore({
             currentAnnotations: [],
             apiResult: apiResultJson.result,
             imageFolderPath: "./src/assets/images/",
-            
         }
     },
     mutations: {

@@ -8,12 +8,6 @@ export default {
   components: {
     Box
   },
-  data() {
-    return {
-      annotation: {},
-      indexCounter: 0
-    }
-  },
   methods: {
     ...mapMutations(['setCurrentAnnotations']),
     getAnnotationsForImage(currentImage, apiResult) {

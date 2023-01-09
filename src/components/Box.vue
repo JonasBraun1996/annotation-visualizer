@@ -10,18 +10,15 @@
 <script>
 export default {
   name: "Box",
-  created() {},
-  data() {
-    return {};
-  },
   props: {
+    //TODO: use top to move box away from x-axis
     top: Number,
+    //TODO: use top to move box away from y-axis
     left: Number,
     width: Number,
     height: Number,
   },
-  methods: {},
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style></style>

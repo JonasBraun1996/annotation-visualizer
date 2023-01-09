@@ -54,7 +54,6 @@ export default {
   <div v-for="i in [currentIndex]" :key="i">
     <img :src="currentSlide" />
   </div>
-
   <annotation></annotation>
   <a class="prev" @click="prev" href="#">&#10094; Previous</a>
   <a class="next" @click="next" href="#">Next &#10095;</a>
