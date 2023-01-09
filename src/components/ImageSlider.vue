@@ -1,10 +1,13 @@
 <script>
 import { mapState, mapMutations } from "vuex";
 import Annotation from "./Annotation.vue";
+import Box from "./Box.vue";
+
 export default {
   name: "Imageslider",
   components: {
     Annotation,
+    Box,
   },
   data() {
     return {
@@ -47,6 +50,8 @@ export default {
 <template>
   <div v-for="i in [currentIndex]" :key="i">
     <img :src="currentSlide" />
+
+    <box :top="30" :left="20" :width="200" :height="300"></box>
   </div>
   <annotation></annotation>
 
